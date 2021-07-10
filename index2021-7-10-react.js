@@ -1,5 +1,7 @@
     import React from "react"
     import ReactDOM from "react-dom"
+
+// 学习react，2021-7-10
     const datamain = true;
     const hallo = () => {
         if(datamain){
