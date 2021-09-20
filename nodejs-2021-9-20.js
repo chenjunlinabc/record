@@ -39,6 +39,4 @@ fs.writeFile("data.txt","hallo nodejs","utf8",(err,data)=>{
                 response.end(data)
             }
          })
-        
-        response.end()
     }).listen(8888)
