@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <div>
+        <div>
+            <button onclick="check()">
+                请求
+            </button>
+            <br>
+            <div id="app"></div>
+        </div>
+    </div>
+    <script>
+        function check(){
+    var xmlhttp = new XMLHttpRequest()
+    xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+            document.getElementById("app").innerHTML = xmlhttp.responseText
+        }
+    }
+    console.log(xmlhttp.readyState)
+    xmlhttp.open("GET","https://httpbin.org/get",false)
+    
+    
+    console.log(xmlhttp.readyState)
+    xmlhttp.onprogress =function(){
+        console.log(xmlhttp.readyState)
+        
+    }
+    xmlhttp.onload = function(){
+        
+        console.log(xmlhttp.readyState)
+    }
+    
+    xmlhttp.send();
+    
+        }
+    </script>
+</body>
+</html>
